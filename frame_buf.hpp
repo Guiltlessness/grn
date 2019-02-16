@@ -12,7 +12,7 @@ extern "C"
 }
 #include <algorithm>
 
-#include "geom.h"
+#include "geom.hpp"
 
 
 
@@ -36,12 +36,12 @@ bool operator < (vertex const& v1, vertex const& v2);
 struct frame_buf {
     pix* content;
     int height, width, high_v, lenght_v, fb;
-    frame_buf() ;
-    ~frame_buf () ;
     pix* operator[] (int y_ind) noexcept;
     void set_pixel(int x, int y, pix const& p) noexcept;
     void clear() noexcept;
     void update() noexcept;
+    frame_buf();
+    ~frame_buf ();
 
 };
 
